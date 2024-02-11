@@ -16,7 +16,7 @@ include('includes/navbar.php');
                         <h4>Login</h4>
                     </div>
                     <div class="card-body">                        
-                            
+                    <form action="logincode.php" method="POST">     
                         <div class="form-group mb-3 ">
                             <lable>Email Id</lable>
                             <input required type="email" name="email" placeholder="Enter Email Address" class="form-control">
@@ -28,8 +28,9 @@ include('includes/navbar.php');
                         </div>                            
 
                         <div class="form-group mb-3 ">
-                            <button required type="submit" name="register_btn" class="btn btn-primary" >Login now</button>
-                        </div>                      
+                            <button required type="submit" name="login_btn" class="btn btn-primary" >Login now</button>
+                        </div> 
+                    </form>                     
 
                     </div> 
                 </div>                   
