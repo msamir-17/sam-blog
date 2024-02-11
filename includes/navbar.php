@@ -12,20 +12,23 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li>
+
+        <?php if(isset($_SESSION['auth_role'])) : ?>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            <?=$_SESSION['auth_user']['user_name']; ?>
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">My Profile</a></li>
+            <li><a class="dropdown-item" href="logout.php">Logout</a></li>
           </ul>
         </li>
+  
+        <?php else : ?>
         <li class="nav-item">
           <a class="nav-link" href="login.php">Login</a>
         </li>
+        <?php endif; ?>
 
         <li class="nav-item">
           <a class="nav-link" href="register.php">Register</a>

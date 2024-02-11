@@ -1,5 +1,5 @@
 <?php
-session_start():
+session_start();
 include("admin/config/dbcon.php");
 
 if(isset($_POST['login_btn'])){
