@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include('admin/config/dbcon.php');
 
 if(isset($_POST['register_btn'])){
