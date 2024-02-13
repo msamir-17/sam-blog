@@ -1,6 +1,6 @@
 <?php
     include('config/dbcon.php');
-    // include('includes/header.php');    
+    include('authentication.php');    
 ?>   
 <?php
     // include('config/dbcon.php');
