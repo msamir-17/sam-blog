@@ -2,9 +2,10 @@
     include('config/dbcon.php');
     include('authentication.php');    
 ?>   
+
+
 <?php
-    // include('config/dbcon.php');
-    include('includes/header.php');    
+    include('includes/header.php');
 ?>   
 
 <div class="container ">

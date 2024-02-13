@@ -8,7 +8,7 @@
         unset($_SESSION['auth_user']);
 
         $_SESSION['message'] = "Logged Out Successfully";
-        header("Location: login.php");
+        header("Location: index.php");
         exit(0);
 
    }

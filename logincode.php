@@ -9,13 +9,15 @@ if(isset($_POST['login_btn'])){
     $login_query = "SELECT * FROM users WHERE email='$email' AND password='$password' LIMIT 1 ";
     $login_query_run = mysqli_query($con,$login_query);
 
-    if(mysqli_num_rows($login_query_run) > 0){
+    if(mysqli_num_rows($login_query_run) > 0)
+    {
         foreach($login_query_run as $data){
             $user_id = $data['id'];
             $user_name = $data['fname'].' '. $data['lname'];
             $user_email = $data['email'];
             $role_as = $data['role_as'];
         }
+
         $_SESSION['auth'] = true;
         $_SESSION['auth_role'] = "$role_as"; //1 = admin
         $_SESSION['auth_user'] = [
@@ -27,7 +29,7 @@ if(isset($_POST['login_btn'])){
         if($_SESSION['auth_role'] == '1')   //1=admin
         {
             $_SESSION['message'] = "Welcome To Dashboard";
-            header("Location: admin/index.php");
+            header("Location: .admin/index.php");
             exit(0);
         }
         elseif($_SESSION['auth_role'] == '0'){

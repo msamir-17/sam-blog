@@ -13,10 +13,10 @@
           <a class="nav-link" href="#">Link</a>
         </li>
 
-        <?php if(isset($_SESSION['auth_role'])) : ?>
+        <?php if(isset($_SESSION['auth_user'])) : ?>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <?=$_SESSION['auth_user']['user_name']; ?>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <?= $_SESSION['auth_user']['user_name']; ?>
           </a>
           <ul class="dropdown-menu" aria-lableledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">My Profile</a></li>
