@@ -2,8 +2,8 @@
 session_start();
 
 if(isset($_SESSION['auth'])){
-    $_SESSION['message'] = "You Are Already Logged In";
-    header("Locaton: ../lindex.php");
+    $_SESSION['message'] = "You Are Already Registered In";
+    header("Location: index.php");
     exit(0);
 }
     include('includes/header.php');

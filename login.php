@@ -1,12 +1,13 @@
 <?php
 session_start();
 
-if(isset($_SESSION['auth'])){
-    if(!isset($_SESSION['message'])){
-        $_SESSION['message'] = "You Are Already Logged In";
+if(isset($_SESSION['auth']))
+{
+    // if(!isset($_SESSION['message'])){
+    $_SESSION['message'] = "You Are Already Logged In";
 
-    }
-    header("Locaton: ../index.php");
+    // }
+    header("Location: index.php");
     exit(0);
 }
 
@@ -25,7 +26,8 @@ include('includes/navbar.php');
                     <div class="card-header">
                         <h4>Login</h4>
                     </div>
-                    <div class="card-body">                        
+                    <div class="card-body"> 
+                                               
                     <form action="logincode.php" method="POST">     
                         <div class="form-group mb-3 ">
                             <lable>Email Id</lable>
