@@ -13,14 +13,18 @@
         <li class="breadcrumb-item ">Users</li>
     </ol>
     <div class="row">
+
         <div class="col-md-12">
+            <?php include('message.php');?>
+
             <div class="card">
                 <div class="card-header">
                     <h3>Registered User</h3>
+                        <!-- <a href="registered-add.php" class="btn btn-primary float-end " >Add Admin</a> -->
 
                 </div>
                 <div class="card-body">
-                    <div class="table table-bordered">
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <td>ID</td>
@@ -37,7 +41,8 @@
                                 $query = "SELECT * FROM users";
                                 $query_run = mysqli_query($con, $query);
 
-                                if(mysqli_num_rows($query_run) > 0){
+                                if(mysqli_num_rows($query_run) > 0)
+                                {
                                     foreach($query_run as $row){
                                         ?>
                                             <tr>
@@ -48,15 +53,15 @@
                                                 <td>
                                                     <?php
                                                         if($row['role_as'] == '1'){
-                                                            echo 'admin'
+                                                            echo 'admin';
                                                         }
-                                                        else($row['role_as'] == '0'){
-                                                            echo 'user'
+                                                        elseif($row['role_as'] == '0'){
+                                                            echo 'user';
                                                         }
                                                     
                                                     ?>
                                                 </td>                                                
-                                                <td><a href="edit-register.php" class="btn btn-success" >Edit</a></td>                                                
+                                                <td><a href="register-edit.php?id=<?=$row['id'];?>" class="btn btn-success" >Edit</a></td>                                                
                                                 <td><button type="button" class="btn btn-danger" >Delete</button></td>                                                
                                             </tr>
                                         
@@ -66,7 +71,7 @@
                                 else{
                                     ?>
                                         <tr>
-                                            <td colspan="6"> No Record</td>
+                                            <td colspan="6"> No Record Found </td>
                                         </tr>
                                     <?php
                                 }
@@ -74,7 +79,7 @@
                             ?>
                             
                         </tbody>
-                    </div>
+                    </table>
                 </div>
             </div>
         </div>
