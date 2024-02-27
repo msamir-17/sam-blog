@@ -20,7 +20,7 @@
             <div class="card">
                 <div class="card-header">
                     <h3>Registered User</h3>
-                        <!-- <a href="registered-add.php" class="btn btn-primary float-end " >Add Admin</a> -->
+                        <a href="registered-add.php" class="btn btn-primary float-end " >Add Admin</a>
 
                 </div>
                 <div class="card-body">
@@ -62,7 +62,12 @@
                                                     ?>
                                                 </td>                                                
                                                 <td><a href="register-edit.php?id=<?=$row['id'];?>" class="btn btn-success" >Edit</a></td>                                                
-                                                <td><button type="button" class="btn btn-danger" >Delete</button></td>                                                
+                                                <td>
+                                                    <form action="code.php" method="POST" >
+                                                        <button type="submit" name="delete_user" value="<?=$row['id']; ?>" class="btn btn-danger"  >Delete</button>
+
+                                                    </form>
+                                                </td>                                                
                                             </tr>
                                         
                                         <?php
