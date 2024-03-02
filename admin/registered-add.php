@@ -13,7 +13,7 @@
             <div class="card">
                 <div class="card-header">
                     <h3>Add User/Admin
-                        <a href="register-view.php" class="btn btn-danger float-end" ></a>
+                        <a href="register-view.php" class="btn btn-danger float-end" >BACK</a>
                     </h3>
                 </div>
                 <div class="card-body">
