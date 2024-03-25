@@ -1,12 +1,11 @@
 <?php
-session_start();
+include('includes/header.php');
 
 if(isset($_SESSION['auth'])){
     $_SESSION['message'] = "You Are Already Registered In";
     header("Location: index.php");
     exit(0);
 }
-    include('includes/header.php');
     include('includes/navbar.php');
 ?>
 

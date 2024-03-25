@@ -23,14 +23,14 @@
                         if(isset($_GET['id'])){
                             $category_id = $_GET['id'];
                             $category_edit = " SELECT * FROM categories WHERE id='$category_id' LIMIT 1 ";
-                            $category_run = mysqli_query($con,$category_edit);
+                            $category_run = mysqli_query($con, $category_edit);
 
                             if(mysqli_num_rows($category_run) > 0 )
                             {
                                 $row = mysqli_fetch_array($category_run);
                                 ?>
                                 <form action="code.php" method="POST" >
-                                    <input type="text" value="<?= $row['id'] ?>" >
+                                    <input type="hidden" name="category_id" value="<?= $row['id'] ?>" >
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
                                             <label for=""> Name</label>
@@ -49,22 +49,22 @@
 
                                         <div class="col-md-12 mb-3">
                                             <label for="">Meta Title</label>
-                                            <input type="text" name="meta_title" value="<?=$row['meta_title']?>" required class="form-control" >
+                                            <input type="text" name="meta_title" value="<?= $row['meta_title'] ?>" max="191" required class="form-control" >
                                         </div>
 
                                         <div class="col-md-6 mb-3">
                                             <label for="">Meta Description</label>
-                                            <textarea  name="meta_description"  required  class="form-control" row="4"  ><?=$row['meta_description']?></textarea>
+                                            <textarea  name="meta_description"  required  class="form-control" row="4" ><?=$row['meta_description']?></textarea>
                                         </div>
 
                                         <div class="col-md-6 mb-3">
                                             <label for="">Meta Keyword</label>
-                                            <textarea  name="meta_keyword" required class="form-control" row="4"  ><?=$row['meta_keyword']?> </textarea>
+                                            <textarea  name="meta_keyword" required class="form-control" row="4" ><?= $row['meta_keyword'] ?> </textarea>
                                         </div>
 
                                         <div class="col-md-6 mb-3">
                                             <label for="">Navbar Status</label> <br/>
-                                            <input type="checkbox" <?=$row['navbar_status'] == '1' ? 'checked':'' ?> name="navbar_status"  width="70px" height="70px" >
+                                            <input type="checkbox" name="navbar_status" <?=$row['navbar_status'] == '1' ? 'checked':'' ?>  width="70px" height="70px" >
                                         </div>
 
                                         <div class="col-md-6 mb-3">
